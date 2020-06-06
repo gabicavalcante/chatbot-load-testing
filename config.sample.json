@@ -1,0 +1,46 @@
+{
+  "ChatBotURL": "http://0.0.0.0:5000/chatbot",
+  "UserId": 13,
+  "RequestTimeMin": 100,
+  "RequestTimeMax": 200,
+  "ResponsePauseMin": 1000,
+  "ResponsePauseMax": 5000,
+  "Rules": [
+    {
+      "Send": {
+        "Name": "step#1",
+        "Content": "gostaria de saber o preço"
+      },
+      "Receive": {
+        "Content": "Olá. Seja bem vindo!"
+      }
+    },
+    {
+      "Send": {
+        "Name": "step#2",
+        "Content": "1"
+      },
+      "Receive": {
+        "Content": "Qual dos nossos produtos você deseja comprar?"
+      }
+    },
+    {
+      "Send": {
+        "Name": "step#3",
+        "Content": "1"
+      },
+      "Receive": {
+        "Content": "Com qual dos nossos profissionais você gostaria de agendar?"
+      }
+    },
+    {
+      "Send": {
+        "Name": "step#4",
+        "Content": "1"
+      },
+      "Receive": {
+        "Content": "Qual o tipo de pagamento você vai usar?"
+      }
+    }
+  ]
+}
