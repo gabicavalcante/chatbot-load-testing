@@ -10,6 +10,7 @@ import (
     "log"
     "sync"
     "bytes"
+    "os"
 )
 
 var portNumber *string
@@ -28,6 +29,13 @@ func botsHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 	}
+}
+
+
+func statHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Printf("[%v] %v\n", r.Method, r.URL)
+    printStat(w) 
+    printStat(os.Stdout)
 }
 
 
@@ -51,7 +59,9 @@ func main() {
     portNumber = flag.String("port", "8877", "Port number to use for connection")
     configFile = flag.String("conf", "config.json", "Path to config file")
     flag.Parse()
+    
     readConfig(&config)
+    initStat(config)
 
     start := time.Now()
     ch := make(chan string)
@@ -61,6 +71,7 @@ func main() {
     // add two goroutines to `wg` WaitGroup
     wg.Add(2)
 
+    http.HandleFunc("/stat", statHandler)
     http.HandleFunc("/message", botsHandler)
 
     // create a default route handler

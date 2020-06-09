@@ -7,38 +7,38 @@
   "ResponsePauseMax": 5000,
   "Rules": [
     {
-      "Send": {
+      "Request": {
         "Name": "step#1",
         "Content": "gostaria de saber o preço"
       },
-      "Receive": {
+      "Response": {
         "Content": "Olá. Seja bem vindo!"
       }
     },
     {
-      "Send": {
+      "Request": {
         "Name": "step#2",
         "Content": "1"
       },
-      "Receive": {
+      "Response": {
         "Content": "Qual dos nossos produtos você deseja comprar?"
       }
     },
     {
-      "Send": {
+      "Request": {
         "Name": "step#3",
         "Content": "1"
       },
-      "Receive": {
+      "Response": {
         "Content": "Com qual dos nossos profissionais você gostaria de agendar?"
       }
     },
     {
-      "Send": {
+      "Request": {
         "Name": "step#4",
         "Content": "1"
       },
-      "Receive": {
+      "Response": {
         "Content": "Qual o tipo de pagamento você vai usar?"
       }
     }

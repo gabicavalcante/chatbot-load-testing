@@ -18,8 +18,8 @@ type Config struct {
 }
 
 type ChatRule struct {
-	Send  		ChatRequest
-	Receive 	ChatResponse
+	Request  		ChatRequest
+	Response 	ChatResponse
 }
 
 type ChatRequest struct {
@@ -33,9 +33,9 @@ type ChatResponse struct {
 
 func (conf *Config) Prepare() {
 	for i, rule := range conf.Rules {
-		if rule.Send.Name == "" {
-			conf.Rules[i].Send.Name = fmt.Sprintf("[%v])",
-				rule.Send.Content)
+		if rule.Request.Name == "" {
+			conf.Rules[i].Request.Name = fmt.Sprintf("[%v])",
+				rule.Request.Content)
 		}
 	}
 }
